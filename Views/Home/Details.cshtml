@@ -1,0 +1,32 @@
+@model gestion.Models.Goods
+
+<div class="containerGG">
+   
+    <h1>@Model.Name</h1><br />
+    <img src="@Model.Pic" alt="@Model.Name" />
+
+  
+    <p><strong>Описание:</strong> @Model.Long</p>
+    @if (@Model.Quantity > 0)
+    {
+        <div>Количество: @Model.Quantity</div>
+    }
+  
+    <div class="price">
+        <strong>Цена:</strong> @Model.Price руб.
+    </div>
+
+    <div class="button-container">
+        <form asp-action="Add" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="add-to-cart-btn">
+                Добавить в корзину
+            </button>
+        </form>
+    </div>
+
+    <div class="back-container">
+        <a href="javascript:history.back()" class="back-btn">Назад</a>
+    </div>
+</div>
+

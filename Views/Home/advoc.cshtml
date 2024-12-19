@@ -1,0 +1,60 @@
+@model IEnumerable<gestion.Models.Goods>
+
+<div class="containerG">
+    <h1>Адвокатское бюро</h1>
+    <br />
+    @if (Model != null && Model.Any())
+    {
+        <div class="card-grid">
+
+            @foreach (var item in Model)
+            {
+                @if (item.Type == "Адвокат")
+                {
+                    <a href="@Url.Action("Details", "Home", new { id = item.Id })">
+                        <div class="card">
+                           
+                            <img src="@item.Pic" alt="@item.Name" />
+
+                            <h2>@item.Name</h2>
+
+                            <p>@item.Short</p>
+
+                            <div class="price">
+                                @item.Price руб.
+                            </div>
+                            @if (@item.Quantity > 0)
+                            {
+                                <div>Количество: @item.Quantity</div>
+                            }
+
+
+                            <div class="button-container">
+                                <form asp-action="Add" method="post">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="add-to-cart-btn">
+                                        Добавить в корзину
+                                    </button>
+                                </form>
+                                @if (item.Quantity > 0)
+                                {
+                                    <form asp-action="Remove" method="post" style="display: inline;">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button type="submit" class="remove-from-cart-btn">
+                                            Удалить из корзины
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </a>
+                }
+
+            }
+        </div>
+    }
+    else
+    {
+        <p>Данные отсутствуют.</p>
+    }
+</div>

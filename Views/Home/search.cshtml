@@ -1,0 +1,26 @@
+@model IEnumerable<gestion.Models.Goods>
+
+<div style="margin: 20px;">
+
+    <div class="product-list" style="margin-top: 20px;">
+        @if (Model != null && Model.Any())
+        {
+            <ul style="list-style-type: none; padding: 0;">
+                @foreach (var product in Model)
+                {
+                    <a href="@Url.Action("Details", "Home", new { id = @product.Id })">
+                    <li style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                        <h3>@product.Name</h3>
+                        <p>Цена: @product.Price руб.</p>
+                        <p>@product.Short...</p>
+                    </li>
+                    </a>
+                }
+            </ul>
+        }
+        else
+        {
+            <H2>Запрос не найден.</H2>
+        }
+    </div>
+</div>

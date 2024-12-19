@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Review>
+
+<h2>Отзывы</h2>
+
+<div class="reviews-container">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var review in Model)
+        {
+            <div class="review">
+                <h3>@review.Name</h3>
+                <p>@review.Comment</p>
+                <small>Email: @review.Email</small>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Пока нет отзывов. Будьте первым!</p>
+    }
+</div>
+
+<h2>Оставить отзыв</h2>
+<form asp-action="AddReview" method="post">
+    <div class="form-group">
+        <label>Имя:</label>
+        <input type="text" name="Name" required />
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="Email" required />
+    </div>
+    <div class="form-group">
+        <label>Комментарий:</label>
+        <textarea name="Comment" required></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btnn">Оставить отзыв</button>
+    </div>
+</form>
+

@@ -1,0 +1,87 @@
+﻿@* @model IEnumerable<gestion.Models.Users> *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Гестион</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/gestion.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/"> <img src="/images/logo.jpg" alt="Гестион" width="300" height="144"> </a>
+        </div>
+        <nav class="menu">
+            <a href="@Url.Action("Us", "Home")" id="Us">О нас</a>
+            <a href="@Url.Action("Review", "Home")">Отзывы</a>
+            <a href="@Url.Action("Contacts", "Home" )">Контакты</a>
+        </nav>
+        @{
+            var userEmail = Context.Session.GetString("UserEmail");
+        }
+        <div class="login-form">
+           
+            @if (!string.IsNullOrEmpty(userEmail))
+            {
+                <div class="te">@userEmail</div>
+              
+                <a href="@Url.Action("Cart", "Home")" class="btn btn-secondary">Корзина</a>
+                <a href="@Url.Action("Logout", "Account")" class="btne">Выйти</a>
+            }
+            else
+            {
+                <a href="@Url.Action("Login", "Account")" class="btne">Войти</a>
+                <a href="@Url.Action("Register", "Account")" class="btn btn-secondary">Регистрация</a>
+            }
+        </div>
+
+    </header>
+
+    <nav class="navigation">
+        <a href="@Url.Action("regfirm", "Home")">Регистрация фирм</a>
+        <a href="@Url.Action("likfirm", "Home")">Ликвидация фирм</a>
+        <a href="@Url.Action("bug", "Home")">Бухгалтерские услуги</a>
+        <a href="@Url.Action("advoc", "Home")">Адвокатское бюро</a>
+        <div class="search">
+            <form method="get" asp-controller="Home" asp-action="Search" style="margin: 10px 0;">
+                <input type="text" name="query" placeholder="Поиск" required />
+                <button type="submit">Поиск</button>
+            </form>
+        </div>
+    </nav>
+
+    
+
+    <div class="container">
+        <div class="reviews">
+            <a href="https://yandex.ru/maps/org/gestion/111981490684/reviews/?ll=37.569657%2C55.762256&z=18">
+                <img src="/images/5-star.jpeg" alt="Yandex Reviews" width="170" height="111">
+            </a>
+            <a href="https://www.google.com/search?q=%D0%B3%D0%B5%D1%81%D1%82%D0%B8%D0%BE%D0%BD+%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0+%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BF%D1%80%D0%B5%D1%81%D0%BD%D1%8F+24">
+                <img src="/images/google.png" alt="Google Reviews" width="170" height="111">
+            </a>
+            <a href="https://2gis.ru/moscow/firm/4504128908852077/tab/reviews">
+                <img src="/images/2gis.png" alt="2GIS Reviews" width="170" height="111">
+            </a>
+        </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <footer>
+        <p class="foot" align="center">
+            © Все права защищены - 2024 <br>
+            <a href="https://gestion.ru/wp-content/uploads/2022/07/politika-konfidenczialnosti.pdf" target="_blank" link="#000000" rel="noopener">Политикa конфиденциальности</a>
+        </p>
+    </footer>
+</body>
+</html>

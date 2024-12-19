@@ -1,0 +1,497 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-container {
+    display: flex;
+    flex: 1;
+    background-color: #f9f9f9;
+    overflow: hidden; 
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    color: white;
+    background-color: #5d130e;
+    position: static;
+    display: flex;
+    text-align: center;
+   justify-content: center; 
+    align-items: center;
+     
+}
+.foot {
+    color: white;
+    
+}
+    .foot a {
+        color: white;
+        text-decoration: none;
+       
+    }
+
+.slider {
+    width: 470px;
+    height: 550px;
+    width: 43%;
+    overflow: hidden;
+    /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);*/
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    animation: slide 8s linear infinite;
+}
+
+.item {
+    margin-bottom: 40px;
+    flex-shrink: 0;
+}
+
+    .item img {
+        width: 350px;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        border-radius: 0px;
+    }
+
+
+@keyframes slide {
+    0% {
+        transform: translateY(-15%);
+    }
+
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-15%);
+    }
+}
+.container {
+    flex: 1;  
+    background-color: #ffffff;
+}
+
+
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.menu {
+    display: flex; 
+    gap: 250px;
+}
+.menu a {
+    text-decoration: none; 
+    color: black; 
+    font-size: 30px; 
+    transition: color 0.3s ease; 
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+    .menu a:hover {
+        color: red; 
+    }
+.b {
+    background-color: #ff80;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f5eee5;
+}
+
+    .header .logo img {
+        display: block;
+    }
+
+    .header h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .header .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+    }
+
+        .header .login-form input[type="text"],
+        .header .login-form input[type="password"] {
+            margin: 5px;
+            padding: 8px;
+            width: 150px;
+        }
+
+        .header .login-form .btne {
+            margin-top: 10px;
+            padding: 15px 20px;
+            font-size: 20px;
+            background-color: red;
+            color: antiquewhite;
+            border: none;
+            cursor: pointer;
+        }
+
+        .header .login-form a {
+            margin-top: 10px;
+            padding: 15px 20px;
+            font-size: 20px;
+            color: black;
+            border: 5px solid red;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5eee5;
+    padding: 15px;
+    border-top : 1px solid black;
+}
+
+    .navigation a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .navigation .search {
+        display: flex;
+        align-items: center;
+    }
+
+        .navigation .search input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .navigation .search input[type="button"] {
+            padding: 5px 10px;
+        }
+
+.navigation a:hover {
+    color: red; 
+}
+
+.info {
+    text-align: center;
+}
+.content {
+    display: flex;
+    /*justify-content: space-between;*/
+    padding: 20px;
+}
+
+
+.main-info {
+    width: 100%;
+    padding: 10px;
+    color: black;
+    font-size:18px;
+}
+
+    .main-info img.right-img {
+        float: right;
+        margin-left: 15px;
+    }
+
+.reviews {
+    position: absolute; 
+    top: 325px; 
+    right: 35px; 
+    bottom: 150px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+    .reviews a img {
+        width: 250px;
+        height: 170px;
+        border: 3px solid red; 
+        border-radius: 8px; 
+        transition: transform 0.3s ease; 
+    }
+
+        .reviews a img:hover {
+            transform: scale(1.10); 
+            border-color: red; 
+        }
+.container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+.te{
+    color:black;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+   
+    .card h2 {
+        font-size: 20px;
+        margin: 10px 0;
+        color: #333;
+        font-weight: bold;
+    }
+
+ 
+    .card p {
+        font-size: 18px;
+        color: #666;
+        margin: 5px 10px;
+    }
+
+    
+    .card .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        margin: 10px 0;
+    }
+.button-container {
+    display: flex; 
+    gap: 10px; 
+    margin-top: 10px;
+}
+.add-to-cart-btn, .remove-from-cart-btn {
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 15px; 
+    font-size: 14px; 
+    border-radius: 5px; 
+    cursor: pointer;
+    margin-top: 10px; 
+    display: block; 
+    text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+    .add-to-cart-btn:hover {
+        background-color: #218838; 
+    }
+    .remove-from-cart-btn {
+    background-color: #dc3545; 
+}
+        .remove-from-cart-btn:hover {
+            background-color: #c82333;
+        }
+
+.back-btn {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .back-btn:hover {
+        background-color: #0056b3; 
+    }
+
+.back-container {
+    top: 0; 
+    left: 0; 
+    margin: 10px; 
+}
+
+
+
+.login-form {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+h2 {
+    color: #333;
+}
+
+.reviews-container {
+    margin-bottom: 30px;
+}
+
+.review {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+    .review h3 {
+        margin: 0;
+        color: #007bff;
+    }
+
+    .review p {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .review small {
+        color: #999;
+    }
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button.btnn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button.btnn:hover {
+        background-color: #0056b3;
+    }
+
+.containerGG img {
+    width: 1100px;
+    height: 650px; 
+    object-fit: cover; 
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px; 
+}
+
+
+.login-form {
+    margin-bottom: 10px;
+}
+
+.btn {
+    /*background-color: #007bff;*/
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+input {
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+
+#agreement {
+    width: auto;
+    display: inline-block;
+}

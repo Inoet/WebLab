@@ -1,0 +1,29 @@
+﻿
+<h2>Вход</h2>
+
+<div class="login-container">
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <p>@ViewBag.ErrorMessage</p>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-warning" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    <form asp-action="Login" method="post">
+        <div class="login-form">
+            <label>Email:</label>
+            <input type="email" name="email" required />
+        </div>
+        <div class="login-form">
+            <label>Пароль:</label>
+            <input type="password" name="password" required />
+        </div>
+        <div class="login-form">
+            <input type="submit" value="Войти" />
+        </div>
+        <a asp-action="Register">Регистрация</a>
+    </form>
+</div>

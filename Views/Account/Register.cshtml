@@ -1,0 +1,61 @@
+﻿<h2>Регистрация</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p style="color: red;">@ViewBag.ErrorMessage</p>
+}
+
+<form asp-action="Register" method="post">
+    <div class="login-form">
+        <label>Email:</label>
+        <input type="email" name="Email" required />
+    </div>
+    <div class="login-form">
+        <label>Имя:</label>
+        <input type="text" name="Name" required />
+    </div>
+    <div class="login-form">
+        <label>Фамилия:</label>
+        <input type="text" name="Fam" required />
+    </div>
+    <div class="login-form">
+        <label>Отчество:</label>
+        <input type="text" name="Fat" />
+    </div>
+    <div class="login-form">
+        <label>Телефон:</label>
+        <input type="tel" name="Phone" pattern="\+?[0-9]{10,15}" required />
+    </div> 
+    <div class="login-form">
+        <label>Пароль:</label>
+        <input type="password" id="Password" name="Password" required />
+    </div>
+    <div class="login-form">
+        <label>Подтвердите пароль:</label>
+        <input type="password" id="ConfirmPassword" name="ConfirmPassword" required />
+    </div>
+    <div class="login-form">
+        <input type="checkbox" id="agreement" />
+        <label for="agreement">Я согласен с <a href="https://gestion.ru/wp-content/uploads/2022/07/politika-konfidenczialnosti.pdf" target="_blank">политикой конфиденциальности</a></label>
+    </div>
+    <div class="login-form">
+        <button type="submit" id="registerButton" class="btn btn-primary" disabled>Зарегистрироваться</button>
+    </div>
+</form>
+<script>
+    const password = document.getElementById("Password");
+    const confirmPassword = document.getElementById("ConfirmPassword");
+    const registerButton = document.getElementById("registerButton");
+
+    document.getElementById("agreement").addEventListener("change", function () {
+        registerButton.disabled = !this.checked || password.value !== confirmPassword.value;
+    });
+
+    confirmPassword.addEventListener("input", function () {
+        registerButton.disabled = password.value !== confirmPassword.value || !document.getElementById("agreement").checked;
+    });
+
+    password.addEventListener("input", function () {
+        registerButton.disabled = password.value !== confirmPassword.value || !document.getElementById("agreement").checked;
+    });
+</script>
