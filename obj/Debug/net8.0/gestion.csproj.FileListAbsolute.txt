@@ -46,3 +46,4 @@ D:\gestion\gestion\gestion\obj\Debug\net8.0\gestion.csproj.AssemblyReference.cac
 D:\gestion\gestion\gestion\obj\Debug\net8.0\gestion.csproj.Up2Date
 D:\gestion\gestion\gestion\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\gestion\gestion\gestion\bin\Debug\net8.0\System.Web.Razor.dll
+D:\gestion\gestion\gestion\obj\Debug\net8.0\gestion.sourcelink.json
